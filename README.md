@@ -59,7 +59,7 @@ What was needed at this point was not additional logic or state handling, but a 
 
 On the backend, the bridge subscribes to the scooter:state:tick Redis Pub/Sub channel. For every message received on that channel, the bridge forwards the message verbatim to all currently connected frontend WebSocket clients.
 
-server.js (backend)
+socket/socketBridge.js (backend)
 
 ```
     const clients = new Set();
