@@ -124,7 +124,7 @@ An **_Event Bridge_** is characterized by its purpose, not its transport layer. 
 The key is maintaining the clear boundary between internal event flow and client delivery. The transport type may change, but responsibility does not.
 
 ## Question
-### _Neat. But why not just skip this extra step and connect the frontend(s) directly to the Redis Pub/Sub-pipeline?_
+### _Neat. But why not just skip this extra step altogether and connect the frontend(s) directly to the Redis Pub/Sub-pipeline?_
 
 Redis Pub/Sub is designed for internal system communications, not for frontend-facing interfaces.
 
