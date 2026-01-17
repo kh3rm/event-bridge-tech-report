@@ -1,5 +1,4 @@
-# An Event Bridge
-A simple, stateless relayer of authoritative event streams
+# An Event Bridge - A simple, neutral, stateless relayer of authoritative event streams
 
 
 ## Introduction
