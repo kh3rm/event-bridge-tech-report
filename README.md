@@ -171,7 +171,7 @@ The result is an exceedingly useful, clear, succinct, understandable, clean stru
 
 Structures resembling the **_Event Bridge_** commonly appear as adapters, gateways, or edge relays.
 The term is introduced here not for novelty, but solely to better highlight this specific role: a simple handoff point between an internal event stream and external consumers.
-Having a distinct label helps reason about this boundary independently of specific transport or implementation details.
+Having a distinct label helps reason about this boundary independent of specific transport or implementation details.
 
 
 ## References
