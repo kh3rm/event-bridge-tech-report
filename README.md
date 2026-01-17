@@ -165,7 +165,7 @@ The **_Event Bridge_** is a deliberately modest and minimalistic structure for s
 
 Its strength comes from its restraint. By staying true to its role as a neutral conduit and relayer, it removes entire classes of complexity, coupling, and failure.
 
-The result is an exceedingly clear, succinct, understandable, clean structure that is easy to reason about, operate and adjust.
+The result is an exceedingly useful, clear, succinct, understandable, clean structure that is easy to reason about, operate and adjust.
 
 
 ## Addendum: Terminology
