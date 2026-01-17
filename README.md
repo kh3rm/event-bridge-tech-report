@@ -95,7 +95,7 @@ The forwarding layer never needs to reconcile, compute, or interpret anything. I
 
 The **Event Bridge** narrows the responsibility surface for each team. Backend ownership ends at event emission, frontend ownership begins at consumption, and the boundary between them remains small and stable.
 
-The initial plan was to write this report under the heading **_Socket Bridge_**. While accurate enough at describing the implementation, that framing places slightly misplaced emphasis on the transport mechanism rather than on the architectural role.
+The initial plan was to write this report under the heading **_Socket Bridge_**. While accurate enough as far as describing the implementation, that framing places slightly misplaced emphasis on the transport mechanism rather than on the architectural role.
 
 Seen through this lens, the structure is thus better and more generally and accurately conceptualized as an **_Event Bridge_**.
 
