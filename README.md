@@ -98,14 +98,13 @@ The **Event Bridge** narrows the responsibility surface for each team. Backend o
 
 The initial plan was to write this report under the heading **_Socket Bridge_**. While accurate enough at describing the implementation, that framing places slightly misplaced emphasis on the transport mechanism rather than on the architectural role.
 
+Seen through this lens, the structure is thus better and more generally and accurately conceptualized as an **_Event Bridge_**.
+
 The WebSockets specifically, although very useful in this case, and a pleasure to work with, are really incidental. The real value lies in the separations and boundaries that this component and setup enforce.
 
 What makes this structure so effective is, again, how clearly it separates responsibilities. The simulator reconciles state and emits events. The bridge relays those events without inspecting or reshaping them. The frontend consumes the events to populate and continuously update its scooter markers, reflecting the current state of each scooter.
 
 By sitting cleanly at the handoff point between the authority and the consumer, the **_Event Bridge_** keeps the flow of data extremely simple, easy to understand, and hard to misconfigure.
-
-
-Seen through this lens, the structure is thus better and more generally and accurately conceptualized as an **_Event Bridge_**.
 
 ## Definition
 An **_Event Bridge_** is a stateless component that forwards an authoritative stream of events from an internal source of truth to downstream consumers without interpretation, manipulation, validation, persistence, or ownership.
