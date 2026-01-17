@@ -169,7 +169,7 @@ The result is an exceedingly useful, clear, succinct, understandable, clean stru
 
 ## Addendum: Terminology
 
-Structures resembling the **_Event Bridge_** commonly appear as adapters, gateways, or edge relays.
+Structures resembling the **_Event Bridge_** commonly appear as adapters, gateways, edge relays, etc.
 The term is introduced here not for novelty, but solely to better highlight this specific role: a simple handoff point between an internal event stream and external consumers.
 Having a distinctive term helps one reason about this boundary independent of specific transport or implementation details.
 
