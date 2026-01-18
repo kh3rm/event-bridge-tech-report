@@ -128,7 +128,7 @@ As a result, it simply can not and should not be consumed directly by frontend c
 
 ### Failure and Error Handling
 
-The **_Event Bridge_** holds no state and makes no decisions. If it fails, event delivery stops, but system state remains correct.
+If the **_Event Bridge_** fails, the event delivery to clients stops, but no state is lost, no decisions are reversed, and no reconciliation is required when it resumes. Clients may observe stale or incomplete views during the outage, which are then corrected automatically as new events arrive.
 
 ## Conclusion
 
