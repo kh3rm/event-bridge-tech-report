@@ -105,14 +105,14 @@ What makes this structure so effective is, again, how clearly it separates respo
 By sitting cleanly at the handoff point between the authority and the consumer, the **_Event Bridge_** keeps the flow of data extremely simple, easy to understand, and hard to misconfigure.
 
 ## Definition
-An **_Event Bridge_** is a stateless component that forwards an authoritative stream of events from an internal source of truth to downstream consumers without interpretation, manipulation, validation, persistence, or ownership.
+An **_Event Bridge_** forwards events across the internal–client boundary without interpreting, transforming, or acting on them.
 
 
 ### Why _Event_ Bridge?
 An **_Event Bridge_** works because events are fully resolved at the moment they are produced. They represent completed decisions - immutable facts - not negotiable state.
 This removes the need for any reconciliation, version tracking, or downstream validation.
 
-Because of this, the bridge can remain pristine as a simple conduit. It simply forwards events agnostically. If a client consumer misses an event, its view and its update may be incomplete, but system correctness is unaffected because authority remains upstream.
+Because of this, the bridge can remain pristine as a simple conduit. It simply forwards events agnostically. Missed events may result in incomplete client views, but authoritative state and decisions remain upstream.
 
 This approach however breaks down for mutable data. Bridging state would require the intermediary to track updates, resolve conflicts, and decide which version is correct - effectively assuming partial ownership. The **_Event Bridge_** avoids all of these pesky problems by operating strictly on events, not state.
 
