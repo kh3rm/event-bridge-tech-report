@@ -39,7 +39,6 @@ rbroadcast.py:
 ```
 ...
 
-        # Real-time push for the live map updates
         self.r.publish("scooter:state:tick", encoded)
 ```
 
