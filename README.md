@@ -2,13 +2,13 @@
 
 ## Introduction
 
-The inspiration for this technical report grew out of an unassuming supporting structure that we made use of in our project, which proved very effective, reliable and solid, despite being made up of only a few rows of code.
+The inspiration for this technical report grew out of an unassuming supporting structure used in our project, which proved highly effective, reliable, and solid, using a remarkably small amount of code.
 
 ### Purpose of This Report
 
-This report aims to highlight this small, under-appreciated architectural pattern that proved very effective, precisely because it wisely chooses to do very little.
+This report aims to highlight this small, under-appreciated architectural pattern, which derives its strength from intentionally doing very little.
 
-The construct, that I have chosen to refer to as an **_Event Bridge_**, helped us with a very practical need: to deliver clean, simple, event-driven [1] updates from an internal system container to a frontend client without extending ownership, responsibility, or coupling. 
+The construct, that I have chosen to refer to as an **_Event Bridge_**, helped us with a very practical need: to deliver clean, simple, event-driven [1] updates from an internal system container to a frontend client, acting solely as a neutral forwarding layer for events.
 
 > **Note**  
 > The following sections describe a concrete implementation based on Redis Pub/Sub and WebSockets. These technologies are used to ground the discussion in a real example, but they are not defining characteristics of the Event Bridge pattern itself. The architectural properties described do not depend on Redis or WebSockets specifically, but on the presence of a suitable, functionally equivalent event delivery mechanism.
