@@ -126,51 +126,24 @@ The key is maintaining the clear boundary between internal event flow and client
 ## Question
 ### _Neat. But why not just skip this extra step altogether and connect the frontend(s) directly to the Redis Pub/Sub-pipeline?_
 
-Redis Pub/Sub is designed for internal system communications, not for frontend-facing interfaces.
-
-Connecting browser-based frontends directly to Redis introduces several concrete problems:
-
-
-* **Security risk** - Redis credentials would need to leave the server, making them inspectable and thus exposing internal infrastructure. [2]
-
-
-* **Protocol mismatch**: Redis speaks via its own TCP-based protocol, which browsers cannot and should not connect to directly. [3]
-
-
-* **Tight coupling**: Frontends would become dependent on Redis-specific details such as channel names and retry behavior, making backend changes immediately disruptive.
-
-
-* **Operational fragility**: Clients would need Redis-specific reconnect and error-handling logic.
-
-
-* **Scaling risk**: Redis is fundamentally designed for trusted server-to-server traffic, not large numbers of long-lived browser connections. [4]
-
-
-The Event Bridge avoids all of this. It terminates the internal Redis connection and exposes the same event stream through a single, client-friendly endpoint. Internal details stay hidden, the bridge remains minimalistic and stateless.
-
-### Key Point to drive home
-
-Internal buses are not interfaces.
-An **_Event Bridge_** ends internal event transport and deliberately exposes a clean, safe client-facing stream.
-
+Redis Pub/Sub assumes trusted, server-side peers and uses a native TCP protocol that browsers cannot directly handle. As a result, it simply cannot be consumed directly by frontend clients.
 
 ### Failure and Error Handling
-Because it holds no state and assumes no authority, the **_Event Bridge_** fails narrowly and predictably. It may stop the delivery of events, but it does not corrupt state or introduce inconsistencies.
-Availability may degrade, updates may suffer - correctness does not.
 
+The **_Event Bridge_** holds no state and makes no decisions. If it fails, event delivery stops, but system state remains correct.
 
 ## Conclusion
-The **_Event Bridge_** is a deliberately modest and minimalistic structure for safely exposing authoritative event streams beyond internal boundaries. It applies naturally to event-driven structures or sub-structures where frontend clients need to be fed in a safe, decoupled and timely matter.
 
-Its strength comes from its restraint. By staying true to its role as a neutral conduit and relayer, it removes entire classes of complexity, coupling, and failure.
+Emitting events, interpreting them, relaying them, and consuming them are distinct and separate roles, and the Event Bridge deliberately confines itself only to the relay.
 
-The result is an exceedingly useful, clear, succinct, understandable, clean structure that is easy to reason about, operate and adjust.
+Its strength comes from its restraint. By staying true to its role as a neutral conduit and relayer, it avoids introducing additional complexity, coupling, or error-handling concerns of its own.
 
+The result is an exceedingly useful, clear, intelligible, simple, and predictable structure that is easy to operate and adjust.
 
 ## Addendum: Terminology
 
 Structures resembling the **_Event Bridge_** commonly appear as adapters, gateways, edge relays, etc.
-The term is introduced here not for novelty, but solely to better highlight this specific role: a simple handoff point between an internal event stream and external consumers.
+The term is introduced here not for novelty, but solely to better highlight the specific role as a clean handoff point between an internal event stream and external consumers.
 Having a distinctive term helps one reason about this boundary independent of specific transport or implementation details.
 
 ## Author:
