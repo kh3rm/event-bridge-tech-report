@@ -173,6 +173,9 @@ Structures resembling the **_Event Bridge_** commonly appear as adapters, gatewa
 The term is introduced here not for novelty, but solely to better highlight this specific role: a simple handoff point between an internal event stream and external consumers.
 Having a distinctive term helps one reason about this boundary independent of specific transport or implementation details.
 
+## Author:
+Herman Karlsson --- vteam 02 --- spark ⚡
+
 
 ## References
 
