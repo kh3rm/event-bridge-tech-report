@@ -100,7 +100,7 @@ Seen through this lens, the structure is better and more generally and accuratel
 
 The WebSockets in this example, although very useful, and a pleasure to work with, are really incidental. The real value lies in the separations and boundaries that this component and setup enforce.
 
-What makes this structure so effective is, again, how clearly it separates the responsibilities. The simulator reconciles state and emits events. The bridge relays those events without inspecting or reshaping them. The frontend consumes the events to populate and continuously update its scooter markers, reflecting the current state of each scooter.
+What makes this structure so effective is, again, how clearly it separates the responsibilities. The simulator reconciles state and emits events. The bridge relays those events without inspecting or reshaping them. The frontend consumes the events to populate and continuously update its scooter markers, reflecting the latest snapshot received of each scooter.
 
 By sitting cleanly at the handoff point between the authority and the consumer, the **_Event Bridge_** keeps the flow of data extremely simple, easy to understand, and hard to misconfigure.
 
