@@ -118,7 +118,7 @@ This approach however breaks down for mutable data. Bridging state would require
 
 An **_Event Bridge_** is characterized by its purpose, not its transport layer. WebSockets are a great option for real-time bidirectional links, but Server-Sent Events, HTTP streams, or durable broker relays (e.g., Kafka, RabbitMQ, etc.) can serve similar roles.
 
-The key is maintaining the clear boundary between internal event flow and client delivery. The transport type may change, but responsibility does not.
+The key is maintaining the clear boundary between internal event flow and client delivery. The transport type may change, but responsibilities does not.
 
 ## Question
 ### _Neat. But why not just skip this extra step altogether and connect the frontend(s) directly to the Redis Pub/Sub-pipeline?_
