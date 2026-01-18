@@ -48,11 +48,9 @@ Each tick therefore emits a complete, self-contained snapshot of the scooter at 
 
 A corresponding Redis subscriber was established in the main Node/Express-based backend container, where these updates become available as a real-time event stream.
 
-What remained: delivering those updates to the admin frontend container and its map view, which needs to render and continuously update scooter markers reflecting position, speed, status, and battery level.
+What remained: delivering those updates to the admin frontend container and its map view, that should render and continuously update scooter markers reflecting position, speed, status, and battery level.
 
-What was needed at this point was not additional logic or state handling, but a simple forwarding service to the frontend - a bridge. For this purpose, the choice fell on classic, fast, reliable, minimalistic WebSockets (WSS).
-
-
+Nothing more needed to be decided or computed. All that was required was a component capable of forwarding the Redis event stream to the frontend - a bridge. For this purpose, the choice fell on classic, fast, reliable, minimalistic WebSockets (WSS).
 
 ### Bridge-side forwarding
 
@@ -94,13 +92,13 @@ The forwarding layer never needs to reconcile, compute, or interpret anything. I
 
 The **Event Bridge** narrows the responsibility surface for each team. Backend ownership ends at event emission, frontend ownership begins at consumption, and the boundary between them remains small and stable.
 
-The initial plan was to write this report under the heading **_Socket Bridge_**. While accurate enough as far as describing the implementation, that framing places slightly misplaced emphasis on the transport mechanism rather than on the architectural role.
+The initial plan was to write this report under the title **_Socket Bridge_**. While accurate enough as far as describing the implementation, that framing places slightly misplaced emphasis on the transport mechanism rather than on the architectural role.
 
 Seen through this lens, the structure is thus better and more generally and accurately conceptualized as an **_Event Bridge_**.
 
-The WebSockets specifically, although very useful in this case, and a pleasure to work with, are really incidental. The real value lies in the separations and boundaries that this component and setup enforce.
+The WebSockets as in this example, although very useful, and a pleasure to work with, are really incidental. The real value lies in the separations and boundaries that this component and setup enforce.
 
-What makes this structure so effective is, again, how clearly it separates responsibilities. The simulator reconciles state and emits events. The bridge relays those events without inspecting or reshaping them. The frontend consumes the events to populate and continuously update its scooter markers, reflecting the current state of each scooter.
+What makes this structure so effective is, again, how clearly it separates the responsibilities. The simulator reconciles state and emits events. The bridge relays those events without inspecting or reshaping them. The frontend consumes the events to populate and continuously update its scooter markers, reflecting the current state of each scooter.
 
 By sitting cleanly at the handoff point between the authority and the consumer, the **_Event Bridge_** keeps the flow of data extremely simple, easy to understand, and hard to misconfigure.
 
