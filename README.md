@@ -10,6 +10,9 @@ This report aims to highlight this small, under-appreciated architectural patter
 
 The construct, that I have chosen to refer to as an **_Event Bridge_**, helped us with a very practical need: to deliver clean, simple, event-driven [1] updates from an internal system container to a frontend client without extending ownership, responsibility, or coupling. 
 
+> **Note**  
+> The following sections describe a concrete implementation based on Redis Pub/Sub and WebSockets. These technologies are used to ground the discussion in a real example, but they are not defining characteristics of the Event Bridge pattern itself. The architectural properties described do not depend on Redis or WebSockets specifically, but on the presence of a suitable, functionally equivalent event delivery mechanism.
+
 ## Example implementation
 
 In our project’s multi-container setup, the simulation container is where scooter instances live and from which all the scooter-related activity eminates. On every simulation tick - update interval - each scooter emits its current state.
