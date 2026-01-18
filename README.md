@@ -96,7 +96,7 @@ The **Event Bridge** narrows the responsibility surface for each team. Backend o
 
 The initial plan was to write this report under the title **_Socket Bridge_**. While accurate enough as far as describing the implementation, that framing places slightly misplaced emphasis on the transport mechanism rather than on the architectural role.
 
-Seen through this lens, the structure is thus better and more generally and accurately conceptualized as an **_Event Bridge_**.
+Seen through this lens, the structure is better and more generally and accurately conceptualized as an **_Event Bridge_**.
 
 The WebSockets in this example, although very useful, and a pleasure to work with, are really incidental. The real value lies in the separations and boundaries that this component and setup enforce.
 
@@ -118,7 +118,7 @@ This approach however breaks down for mutable data. Bridging state would require
 
 ## Transport Agnosticism
 
-An **_Event Bridge_** is defined by its purpose, not its transport layer. WebSockets are a great option for real-time bidirectional links, but Server-Sent Events, HTTP streams, or durable broker relays (e.g., Kafka, RabbitMQ, etc.) can serve similar roles.
+An **_Event Bridge_** is defined by its purpose, not its transport layer. WebSockets are a great option for real-time, low-latency event delivery to clients, but Server-Sent Events, HTTP streams, or durable broker relays (e.g., Kafka, RabbitMQ, etc.) can serve similar roles.
 
 The key is maintaining the clear boundary between internal event flow and client delivery. The transport type may change, but responsibilities do not.
 
