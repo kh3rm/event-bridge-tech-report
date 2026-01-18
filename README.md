@@ -82,7 +82,7 @@ socket/socketBridge.js (backend)
 
 The bridge does not inspect the payload, validate it, transform it, or store it. It simply terminates the internal Redis connection and re-exposes the same event stream to frontend consumers over a client-friendly transport.
 
-There is no session handling, no validation, no transformation, and no persistence. The component listens and forwards, without retaining or acting on the data in any way.
+There is no session handling, no manipulation, and no persistence. The component listens and forwards, without retaining or acting on the data in any way.
 
 ## Strenghts
 
