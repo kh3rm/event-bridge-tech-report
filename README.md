@@ -148,8 +148,13 @@ In concrete terms, the example implementation aligns closely with a Redis broadc
 
 The **_Event Bridge_** terminology is used not for novelty, but to support clear reasoning and discussion by establishing a consistent name for this architectural boundary throughout the text. It captures its role more broadly as a transport-agnostic interface between an internal event stream and external consumers, without coupling the design to Redis, WebSockets, or any other specific implementation.
 
-## Author:
-Herman Karlsson --- vteam 02 --- spark ⚡
+## Team
+<img width="519" height="182" alt="image" src="https://github.com/user-attachments/assets/40b44716-5300-4ab6-a9df-42ed9f752460" />
+
+(vteam 02)
+
+## Author
+Herman Karlsson
 
 
 ## References
