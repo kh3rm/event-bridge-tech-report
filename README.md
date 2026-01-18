@@ -1,4 +1,4 @@
-# An Event Bridge - A neutral relayer of events across the internal–client boundary
+# An Event Bridge - A neutral relayer of events across the internal-client divide
 
 ## Introduction
 
