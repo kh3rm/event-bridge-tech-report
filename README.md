@@ -135,7 +135,7 @@ If the **_Event Bridge_** fails, the event delivery to clients stops, but no sta
 
 ## Conclusion
 
-Emitting events, interpreting them, relaying them, and consuming them are distinct and separate roles, and the Event Bridge deliberately confines itself only to the relay.
+Emitting events, interpreting them, relaying them, and consuming them are distinct and separate roles, and the **_Event Bridge_** deliberately confines itself only to the relay.
 
 Its strength comes from its restraint. By staying true to its role as a neutral conduit and relayer, it avoids introducing additional complexity, coupling, or error-handling concerns of its own.
 
@@ -143,10 +143,10 @@ The result is an exceedingly useful, clear, intelligible, simple, and predictabl
 
 ## Addendum: Terminology
 
-Patterns resembling an Event Bridge frequently appear under names such as adapters, gateways, or broadcast relays.
+Patterns resembling an **_Event Bridge_** frequently appear under names such as adapters, gateways, or broadcast relays.
 In concrete terms, the example implementation aligns closely with a Redis broadcast relay, which forwards events emitted via Redis Pub/Sub to connected consumers.
 
-The Event Bridge terminology is used not for novelty, but to support clear reasoning and discussion by establishing a consistent name for this architectural boundary throughout the text. It captures its role more broadly as a transport-agnostic interface between an internal event stream and external consumers, without coupling the design to Redis, WebSockets, or any other specific implementation.
+The **_Event Bridge_** terminology is used not for novelty, but to support clear reasoning and discussion by establishing a consistent name for this architectural boundary throughout the text. It captures its role more broadly as a transport-agnostic interface between an internal event stream and external consumers, without coupling the design to Redis, WebSockets, or any other specific implementation.
 
 ## Author:
 Herman Karlsson --- vteam 02 --- spark ⚡
