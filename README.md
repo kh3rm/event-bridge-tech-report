@@ -96,7 +96,7 @@ The initial plan was to write this report under the title **_Socket Bridge_**. W
 
 Seen through this lens, the structure is thus better and more generally and accurately conceptualized as an **_Event Bridge_**.
 
-The WebSockets as in this example, although very useful, and a pleasure to work with, are really incidental. The real value lies in the separations and boundaries that this component and setup enforce.
+The WebSockets in this example, although very useful, and a pleasure to work with, are really incidental. The real value lies in the separations and boundaries that this component and setup enforce.
 
 What makes this structure so effective is, again, how clearly it separates the responsibilities. The simulator reconciles state and emits events. The bridge relays those events without inspecting or reshaping them. The frontend consumes the events to populate and continuously update its scooter markers, reflecting the current state of each scooter.
 
