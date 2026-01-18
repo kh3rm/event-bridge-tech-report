@@ -140,9 +140,10 @@ The result is an exceedingly useful, clear, intelligible, simple, and predictabl
 
 ## Addendum: Terminology
 
-Structures resembling the **_Event Bridge_** commonly appear as adapters, gateways, edge relays, etc.
-The term is introduced here not for novelty, but solely to better highlight the specific role as a clean handoff point between an internal event stream and external consumers.
-Having a distinctive term helps one reason about this boundary independent of specific transport or implementation details.
+Patterns resembling an Event Bridge frequently appear under names such as adapters, gateways, or broadcast relays.
+In concrete terms, the example implementation aligns closely with a Redis broadcast relay, which forwards events emitted via Redis Pub/Sub to connected consumers.
+
+The Event Bridge terminology is used not for novelty, but to support clear reasoning and discussion by establishing a consistent name for this architectural boundary throughout the text. It captures its role more broadly as a transport-agnostic interface between an internal event stream and external consumers, without coupling the design to Redis, WebSockets, or any other specific implementation.
 
 ## Author:
 Herman Karlsson --- vteam 02 --- spark ⚡
