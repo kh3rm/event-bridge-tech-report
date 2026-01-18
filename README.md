@@ -125,7 +125,9 @@ The key is maintaining the clear boundary between internal event flow and client
 ## Question
 ### _Neat. But why not just skip this extra step altogether and connect the frontend(s) directly to the Redis Pub/Sub-pipeline?_
 
-Redis Pub/Sub assumes trusted, server-side peers and uses a native TCP protocol that browsers cannot directly handle. [2] As a result, it simply cannot be consumed directly by frontend clients.
+Redis Pub/Sub assumes trusted, server-side peers and uses a native TCP protocol that browsers cannot directly handle. [2]
+
+As a result, it simply cannot be consumed directly by frontend clients.
 
 ### Failure and Error Handling
 
