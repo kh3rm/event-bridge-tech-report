@@ -125,7 +125,7 @@ The key is maintaining the clear boundary between internal event flow and client
 
 Redis Pub/Sub assumes trusted, server-side peers and uses a native TCP protocol that browsers cannot directly handle. [2]
 
-As a result, it simply cannot be consumed directly by frontend clients.
+As a result, it simply can not and should not be consumed directly by frontend clients.
 
 ### Failure and Error Handling
 
