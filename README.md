@@ -50,7 +50,7 @@ Each tick therefore emits a complete, self-contained snapshot of the scooter at 
 
 A corresponding Redis subscriber was established in the main Node/Express-based backend container, where these updates become available as a real-time event stream.
 
-What remained: delivering those updates to the admin frontend container and its map view, that should render and continuously update scooter markers reflecting position, speed, status, and battery level.
+What remained: delivering those updates to the admin frontend container and its map view, that should render and continuously update the scooter markers reflecting their position, speed, status, and battery level.
 
 Nothing more needed to be decided or computed. All that was required was a component capable of forwarding the Redis event stream to the frontend - a bridge. For this purpose, the choice fell on classic, fast, reliable, minimalistic WebSockets (WSS).
 
@@ -105,7 +105,7 @@ What makes this structure so effective is, again, how clearly it separates the r
 By sitting cleanly at the handoff point between the authority and the consumer, the **_Event Bridge_** keeps the flow of data extremely simple, easy to understand, and hard to misconfigure.
 
 ## Definition
-An **_Event Bridge_** forwards events across the internal–client boundary without interpreting, transforming, or acting on them.
+An **_Event Bridge_** forwards events across the internal-client divide without interpreting, transforming, or acting on them.
 
 
 ### Why _Event_ Bridge?
