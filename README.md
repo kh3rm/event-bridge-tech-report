@@ -118,7 +118,7 @@ This approach however breaks down for mutable data. Bridging state would require
 
 ## Transport Agnosticism
 
-An **_Event Bridge_** is defined by its purpose, not its transport layer. WebSockets are a great option for real-time, low-latency event delivery to clients, but Server-Sent Events, HTTP streams, or durable broker relays (e.g., Kafka, RabbitMQ, etc.) can serve similar roles.
+An **_Event Bridge_** is defined by its purpose, not its transport layer. WebSockets are a great option for real-time, low-latency event delivery to clients, but Server-Sent Events, HTTP streams, or durable broker relays (e.g., Kafka, RabbitMQ, etc.), for example, can serve similar roles.
 
 The key is maintaining the clear boundary between internal event flow and client delivery. The transport type may change, but responsibilities do not.
 
