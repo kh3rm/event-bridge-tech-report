@@ -144,7 +144,7 @@ The result is an exceedingly useful, clear, intelligible, simple, and predictabl
 ## Addendum: Terminology
 
 Patterns resembling an **_Event Bridge_** frequently appear under names such as adapters, gateways, or broadcast relays.
-In concrete terms, the example implementation aligns closely with a Redis broadcast relay, which forwards events emitted via Redis Pub/Sub to connected consumers.
+In concrete terms, the example implementation aligns closely with a Redis broadcast relay, which forwards events emitted via Redis Pub/Sub to connected clients.
 
 The **_Event Bridge_** terminology is used not for novelty, but to support clear reasoning and discussion by establishing a consistent name for this architectural boundary throughout the text. It captures its role more broadly as a transport-agnostic interface between an internal event stream and external consumers, without coupling the design to Redis, WebSockets, or any other specific implementation.
 
