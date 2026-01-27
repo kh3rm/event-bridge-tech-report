@@ -21,7 +21,7 @@ In our project’s multi-container setup, the simulation container is where scoo
 
 On each simulation tick, the simulator constructs a payload representing the full current state of a scooter and publishes it. The logic looks as follows:
 
-The simulator builds a payload object containing the scooter identifier, position, battery level, status, and speed. This payload is encoded as JSON, and published on the Redis Pub/Sub channel scooter:state:tick.
+The simulator builds a payload object containing the scooter identifier, position, battery level, status, and speed. This payload is encoded as JSON, and published on the Redis Pub/Sub-channel scooter:state:tick.
 
 scooter.py:
 ```python
@@ -56,7 +56,7 @@ Nothing more needed to be decided or computed. All that was required was a compo
 
 ### Bridge-side forwarding
 
-On the backend, the bridge subscribes to the scooter:state:tick Redis Pub/Sub channel. For every message received on that channel, the bridge forwards the message verbatim to all currently connected frontend WebSocket clients.
+On the backend, the bridge subscribes to the scooter:state:tick-Redis Pub/Sub channel. For every message received on that channel, the bridge forwards the message verbatim to all currently connected frontend WebSocket clients.
 
 socket/socketBridge.js (backend)
 
@@ -120,7 +120,7 @@ This approach however breaks down for mutable data. Bridging state would require
 
 An **_Event Bridge_** is defined by its purpose, not its transport layer. WebSockets are a great option for real-time, low-latency event delivery to clients, but Server-Sent Events, HTTP streams, or durable broker relays (e.g., Kafka, RabbitMQ, etc.), for example, can serve similar roles.
 
-The key is maintaining the clear boundary between internal event flow and client delivery. The transport type may change, but responsibilities do not.
+The key is maintaining the clear boundary between internal event flow and client delivery. The transport type may change - the responsibilities do not.
 
 ## Question
 ### _Neat. But why not just skip this extra step altogether and connect the frontend(s) directly to the Redis Pub/Sub-pipeline?_
