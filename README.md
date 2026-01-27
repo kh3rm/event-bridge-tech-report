@@ -56,7 +56,7 @@ Nothing more needed to be decided or computed. All that was required was a compo
 
 ### Bridge-side forwarding
 
-On the backend, the bridge subscribes to the scooter:state:tick-Redis Pub/Sub channel. For every message received on that channel, the bridge forwards the message verbatim to all currently connected frontend WebSocket clients.
+On the backend, the bridge subscribes to the scooter:state:tick-Redis-Pub/Sub channel. For every message received on that channel, the bridge forwards the message verbatim to all currently connected frontend WebSocket clients.
 
 socket/socketBridge.js (backend)
 
